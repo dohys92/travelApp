@@ -1,0 +1,61 @@
+
+form {
+    border: 1px solid #545454;
+    border-radius: 3px;
+    padding: 40px;
+}
+
+input {
+    padding: 5px 20px;
+    width: 25%;
+    line-height: 16px;
+    margin: 10px;
+}
+
+.headline {
+	font-size: 36px;
+	padding: 10px;
+	text-align: center;
+}
+
+.text {
+	padding: 10px;
+	font-family: SF Pro Display, Helvetica;
+
+}
+
+#submit {
+	padding: 10px;
+	border-radius: 10px;
+	margin: 20px;
+	background-color: rgb(0,122,245);
+	color: white;
+	border: none;
+	width: 90%;
+	font-size: 16px;
+}
+
+#submit:hover {
+	opacity: 0.8;
+	cursor: pointer;
+	color: white;
+}
+
+.title {
+	font-family: SF Pro Display, Helvetica;
+	font-size: 20px;
+	margin: 5px;
+	padding: 5px;
+}
+
+.search-result {
+	padding: 5px;
+}
+#entryHolder {
+	font-family: SF Pro Display, Helvetica;
+	margin: 10px;
+	padding: 10px;
+	color: white;
+	background-color: rgb(0,122,245);
+	border-radius: 10px;
+}
