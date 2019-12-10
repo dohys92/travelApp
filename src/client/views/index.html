@@ -4,7 +4,13 @@
 <meta charset="UTF-8">
 <title>Travel App</title>
 <link href="https://fonts.googleapis.com/css?family=Oswald:400,600,700|Ranga:400,700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+<!-- <link rel="stylesheet" href="style.css"> -->
+<link type="scss" rel="stylesheet" href="/styles/resets.scss">
+<link type="scss" rel="stylesheet" href="/styles/base.scss">
+<link type="scss" rel="stylesheet" href="/styles/header.scss">
+<link type="scss" rel="stylesheet" href="/styles/form.scss">
+<link type="scss" rel="stylesheet" href="/styles/footer.scss">
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 </head>
  <body>
 <div id = "app">
@@ -20,18 +26,19 @@
     <input type="date" id="depart" name="depature-date"
        value=""
        min="2019-12-01" max="2029-12-31">
-       <div class="countdown">
-           <p class="text">Time left: </p>
-           <p class="text" id="timeLeft"></p>
-       </div>
+       
   </div>
 
   <div class ="result">
-    <button id="submit" type = "submit"> SEARCH </button>
+    <button id="submit" type = "submit"> Search </button>
   </div>
+  <div class="countdown">
+           <p class="text">Time left: </p>
+           <p class="text" id="timeLeft"></p>
+       </div>
   <div class ="holder entry">
       <div id = "entryHolder">
-          <div class = "title">RESULTS</div>
+          <div class = "title">Travel Information</div>
           <div class="search-result" id = "latitude"></div> 
           <div class="search-result" id = "longitude"></div>
           <div class="search-result" id = "country"></div>
@@ -41,8 +48,28 @@
         <div class="search-result" >
           <img id = "pixabayImage" src="" alt="">
         </div>
-      </div>
+          <div class="toDoList">
+    <div class="header">
+          <h3 class="title">To Do List - Plan Ahead</h3>
+    </div>
+    
+    <div class="add-item">
+      <input type="text" id="input" placeholder="Add an item">
+      <button id="our-button">ADD</button>
+    </div>
+
+    <div class="content">
+      <ul id="list">
+      </ul>
+    </div>
   </div>
+      </div>
+
+
+  </div>
+
+
+
   </div>
   <script>
     // Check that service workers are supported

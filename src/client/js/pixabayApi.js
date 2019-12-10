@@ -1,5 +1,0 @@
-// function getImage() {
-
-// }
-
-// export { getImage }

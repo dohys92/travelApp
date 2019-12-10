@@ -78,8 +78,8 @@ function performAction(e) {
         console.log("DARK SKY API WORKING");
         console.log(res);
         document.getElementById('weather-data').innerHTML = "Weather Forecast: " + res['daily'].data[0].summary;
-        document.getElementById('temp-high').innerHTML = "Temperature High: " + res['daily'].data[0].temperatureHigh + " Fahrenheit";
-        document.getElementById('temp-low').innerHTML = "Temperature Low: " + res['daily'].data[0].temperatureLow + " Fahrenheit";
+        document.getElementById('temp-high').innerHTML = "Temperature High: " + res['daily'].data[0].temperatureHigh + "° F";
+        document.getElementById('temp-low').innerHTML = "Temperature Low: " + res['daily'].data[0].temperatureLow + "° F";
       })
     .then(function(res){
       // PIXABAY IMAGE API - Yellow flowers
@@ -93,12 +93,13 @@ function performAction(e) {
       // let pixImage = document.createElement('img');
       console.log(":: PIXABAY API::")
       console.log(res.hits[0].webformatURL);
+      if(res.hits[0].webformatURL === undefined) {
+        console.log("NO IMAGE..")
+      }
       document.getElementById('pixabayImage').src = res.hits[Math.floor(Math.random() * 10)].webformatURL;
 
     })
 }
-
-const result = {};
 
 const getData = async (url) => {
     const response = await fetch(url);
@@ -121,9 +122,30 @@ const updateUI = async() => {
       console.log("error",error);
   }
 }
-// Create a new date instance dynamically with JS
-// let d = new Date();
-// let newDate = d.getMonth()+'.'+ d.getDate()+'.'+ d.getFullYear();
+
+// TO DO LIST FUNCTIONALITY
+let id = 0;
+let userAddedList = document.getElementById('list')
+let ourButton = document.getElementById('our-button')
+let input = document.getElementById('input');
+
+function addToDo() {
+  let task = input.value;
+  const text = `<li class="item">
+                  <p class="text">${task}</p></i>
+              </li>`;
+  userAddedList.insertAdjacentHTML("afterbegin", text);
+  input.value = ""; 
+}
+
+ourButton.addEventListener('click', addToDo);
+// document.addEventListener("keyup", function(e){
+//   if(e.keyCode==13){
+//     addToDo;
+//   }
+//   input.value = "";
+// }
 
 export { countDown }
 export { performAction }
+export { getData }
