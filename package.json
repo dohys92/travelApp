@@ -3,8 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "test": "jest",
+    "test": "jest --detectOpenHandles",
     "start": "node src/server/index.js",
     "build": "webpack",
     "dev": "webpack-dev-server  --config webpack.dev.js --open",
@@ -34,6 +33,7 @@
     "node-sass": "^4.13.0",
     "sass-loader": "^8.0.0",
     "style-loader": "^1.0.1",
+    "supertest": "^4.0.2",
     "webpack-dev-server": "^3.9.0",
     "workbox-webpack-plugin": "^4.3.1"
   }
